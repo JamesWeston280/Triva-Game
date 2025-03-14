@@ -1,0 +1,16 @@
+
+    <% if (locals.start == true && locals.content) 
+    { %>
+            <form action="/results" method="post"> 
+            <% for (let i = 0; i < content.results.length; i++) { %>
+                <% if (content.results[i].type == "multiple") { %>
+                    <%- include("partials/multiplechoice.ejs", {content : content.results[i], questionNum: i}); %>
+                <% } else { %>
+                    <%- include("partials/truefalse.ejs", {content : content.results[i], questionNum: i}); %>
+                <% } %>
+                <% } %>
+            <div></div>
+                <input name="submit" class="submitButton" type="submit" value="Check answers"></input>
+            </form>
+    <% } else { %> <%-include("partials/gameover.ejs");%> <% } %>
+    
