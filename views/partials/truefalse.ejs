@@ -1,6 +1,8 @@
-<h3>
-    <%= content.question%>
-</h3>
-
-<input id="question<%= questionNum %>" name="question<%= questionNum %>" type="radio" value="True">true</input>
-<input id="question<%= questionNum %>" name="question<%= questionNum %>" type="radio" value="False">false</input>
+<div class="option">
+    <input id="question<%= questionNum %>_true" name="question<%= questionNum %>" type="radio" value="True">
+    <label for="question<%= questionNum %>_true">True</label>
+</div>
+<div class="option">
+    <input id="question<%= questionNum %>_false" name="question<%= questionNum %>" type="radio" value="False">
+    <label for="question<%= questionNum %>_false">False</label>
+</div>

@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Beautiful gradient background */
+    color: #ffffff; /* Default text color to white for better contrast */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto; /* Add margin to the top for better spacing */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8); /* Dark background for better contrast */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+}
+
+.question-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f0f0f0; /* Light gray background for questions */
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Animation for hover effect */
+}
+
+.question-container:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase; /* Make text uppercase for emphasis */
+    color: #ffcc00; /* Bright golden color for headers */
+}
+
+.option {
+    margin: 15px 0;
+    padding: 10px;
+    background: #ffffff; /* White background for options */
+    color: #333333; /* Dark text color for options to contrast with white background */
+    border-radius: 8px;
+    transition: background 0.3s; /* Smooth background change on hover */
+}
+
+.option:hover {
+    background: #e7f0fe; /* Light blue background on hover */
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #2575fc; /* Change the color of the radio button */
+}
+
+.submit-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submitButton {
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Gradient button */
+    color: #ffffff; /* White text for better contrast */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px; /* Rounder button corners */
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for button depth */
+}
+
+.submitButton:hover {
+    background: linear-gradient(to right, #ff4b2b, #ff416c); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Lift the button on hover */
+}
+
+.gameover-message {
+    text-align: center;
+    margin-top: 30px;
+    color: #ffcc00; /* Bright golden color for game over text */
+}
+
+h1 {
+    color: #ffcc00; /* Bright golden color for main heading */
+}
+
+h2 {
+    color: #ffcc00; /* Consistent bright color for secondary heading */
+}
+
+h3 {
+    color: #333333; /* Dark gray color for question text for better contrast */
+}
+
+.title{
+    font-size: 4rem;
+}

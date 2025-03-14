@@ -1,7 +1,8 @@
 <h1>Game over</h1>
-<h2>Your score is <%=score%></h2>
-
+<h2>Your score is <%if (locals.score) { %> <%= score+" / 10"%> <% } else { %>0 / 10 <% } %></h2>
 
 <form action="/playagain" method="post"> 
-    <input name="submit" class="submitButton" type="submit" value="Play again"></input>
+    <div class="submit-container">
+        <input name="submit" class="submitButton" type="submit" value="Play again">
+    </div>
 </form>

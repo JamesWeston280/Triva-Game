@@ -1,16 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">TRIVA</h2>
+        <% 
+        function removeHtmlEntities(text) {
+            return text.replace(/&[a-zA-Z0-9#]+;/g, '');
+        }
 
-    <% if (locals.start == true && locals.content) 
-    { %>
-            <form action="/results" method="post"> 
-            <% for (let i = 0; i < content.results.length; i++) { %>
-                <% if (content.results[i].type == "multiple") { %>
-                    <%- include("partials/multiplechoice.ejs", {content : content.results[i], questionNum: i}); %>
-                <% } else { %>
-                    <%- include("partials/truefalse.ejs", {content : content.results[i], questionNum: i}); %>
+        if (locals.start == true && locals.content) {
+             %>
+            <form action="/results" method="post">
+                <% for (let i = 0; i < content.results.length; i++) { %>
+                    <div class="question-container">
+                        <h3><%= removeHtmlEntities(content.results[i].question) %></h3>
+                        <% if (content.results[i].type == "multiple") { %>
+                            <%- include("partials/multiplechoice.ejs", { content: content.results[i], questionNum: i }); %>
+                        <% } else { %>
+                            <%- include("partials/truefalse.ejs", { content: content.results[i], questionNum: i }); %>
+                        <% } %>
+                    </div>
                 <% } %>
-                <% } %>
-            <div></div>
-                <input name="submit" class="submitButton" type="submit" value="Check answers"></input>
+                <div class="submit-container">
+                    <input name="submit" class="submitButton" type="submit" value="Check answers">
+                </div>
             </form>
-    <% } else { %> <%-include("partials/gameover.ejs");%> <% } %>
-    
+        <% } else { %>
+            <%- include("partials/gameover.ejs"); %>
+        <% } %>
+    </div>
+</body>
+</html>

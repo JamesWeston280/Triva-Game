@@ -1,12 +1,7 @@
-<h3>
-    <%= content.question%>
-</h3>
-
 <% 
 var options = [];
 options.push(content.correct_answer);
-for(let i = 0; i < content.incorrect_answers.length; i++)
-{
+for (let i = 0; i < content.incorrect_answers.length; i++) {
     options.push(content.incorrect_answers[i]);
 }
 
@@ -21,6 +16,9 @@ function shuffleArray(array) {
 shuffleArray(options);
 %>
 
-<% for(let i = 0; i < options.length; i++) { %>
-    <input id="question<%= questionNum %>" name="question<%= questionNum %>" type="radio" value="<%=options[i]%>"><%=options[i]%></input>
+<% for (let i = 0; i < options.length; i++) { %>
+    <div class="option">
+        <input id="question<%= questionNum %>_option<%= i %>" name="question<%= questionNum %>" type="radio" value="<%= options[i] %>">
+        <label for="question<%= questionNum %>_option<%= i %>"><%= options[i] %></label>
+    </div>
 <% } %>

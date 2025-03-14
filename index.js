@@ -18,7 +18,7 @@ app.get("/", async (req, res) => {
         const result = await axios.get(API_URL);
         content = result.data;
         score = 0;
-        res.render("index.ejs", { start: start, content: result.data });
+        res.render("index.ejs", { start: start, score: score, content: result.data });
 
     } catch (error) {
         res.render("index.ejs", { content: JSON.stringify(error.response.data) });
