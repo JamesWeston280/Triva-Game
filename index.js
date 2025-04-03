@@ -37,7 +37,7 @@ app.post("/results", (req, res) => {
         }
     }
     console.log(score);
-    res.render("index.ejs", { start: start, score: score });
+    res.redirect("/");
 });
 
 app.post("/playagain", (req, res)=>{
